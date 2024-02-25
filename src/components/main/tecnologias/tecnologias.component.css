@@ -1,0 +1,14 @@
+.tecnologias-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    margin-bottom: 50vh;
+}
+
+.tecnologias-container .slick-slide div {
+    display: flex;
+    justify-content: center;
+}
+
+.tech-icon {
+    max-width: 35%;
+}

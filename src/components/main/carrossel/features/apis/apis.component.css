@@ -1,0 +1,36 @@
+.swagger-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.swagger-text-link {
+    text-decoration: none;
+}
+
+.swagger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.swagger-img {
+    width: 100%;
+}
+
+.react-tabs__tab-list {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.react-tabs__tab--selected {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.react-tabs__tab {
+    padding: 5px;
+    list-style: none;
+}

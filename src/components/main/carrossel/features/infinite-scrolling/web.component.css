@@ -1,0 +1,51 @@
+.poke-card {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 20px;
+}
+
+.infinite-scrolling-container {
+    height: 65vh;
+    overflow: auto;
+}
+
+.poke-list {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+}
+
+.pokemon-name {
+    font-weight: bold;
+}
+
+.pokemon-name::first-letter {
+    text-transform: capitalize;
+}
+
+/* Estilos específicos para telas menores que 410px */
+@media (min-width: 410px) {
+    .poke-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Estilos específicos para telas menores que 630px */
+@media (min-width: 630px) {
+    .poke-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Estilos específicos para telas menores que 900px */
+@media (min-width: 900px) {
+    .poke-list{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

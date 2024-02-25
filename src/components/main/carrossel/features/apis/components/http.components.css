@@ -1,0 +1,9 @@
+.http-component-container {
+    margin-top: 20px;
+}
+
+.http-component-input {
+    text-align: center;
+    margin: 10px;
+    padding: 5px 10px;
+}
