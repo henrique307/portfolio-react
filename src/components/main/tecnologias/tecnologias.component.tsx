@@ -18,22 +18,22 @@ export function MetodologiaComponent() {
       {
         breakpoint: 1080,
         settings: {
-          slidesToShow: 5
-        }
+          slidesToShow: 5,
+        },
       },
       {
         breakpoint: 650,
         settings: {
-          slidesToShow: 4
-        }
+          slidesToShow: 4,
+        },
       },
       {
         breakpoint: 475,
         settings: {
-          slidesToShow: 3
-        }
-      }
-    ]
+          slidesToShow: 3,
+        },
+      },
+    ],
   };
 
   return (
@@ -73,6 +73,18 @@ export function MetodologiaComponent() {
         title="NodeJS"
         className="tech-icon"
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+      />
+      <img
+        alt="Git"
+        title="Git"
+        className="tech-icon"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+      />
+      <img
+        alt="NextJS"
+        title="NextJS"
+        className="tech-icon"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
       />
     </Slider>
   );
