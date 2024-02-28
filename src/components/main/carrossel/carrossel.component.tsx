@@ -5,27 +5,29 @@ import { IntegracoesComponent } from "./features/integracoes/integracoes.compone
 import { ItemCarrosselComponent } from "./item-carrossel/item-carrossel.component";
 import Slider from "react-slick";
 import "./carrossel.component.css";
+import React from "react";
+import { AuthProvider } from "./features/apis/utils/auth.context";
 
 export function CarrosselComponent() {
   const projetos: Projeto[] = [
     {
       titulo: "Aplicações Web",
       descricao:
-        "Experiencia na criação de aplicações web consumindo APIs externas (PokeAPI nesse caso) apresentando os dados de forma concisa e utilizando as melhores práticas de desenvolvimento",
+        "Experiente na criação de aplicações web consumindo APIs externas (PokeAPI nesse caso) apresentando os dados de forma concisa e utilizando as melhores práticas de desenvolvimento",
       classe: "infiniteScrolling",
       componente: PokeListComponent,
     },
     {
       titulo: "APIs",
       descricao:
-        "Experiência na criações de APIs documentadas com Swagger, com sistema de autenticação e integração com automações variadas",
+        "Experiente na criações de APIs documentadas com Swagger, com sistema de autenticação e integração com automações variadas",
       classe: "APIs",
       componente: ApisComponent,
     },
     {
-      titulo: "Integrações diversas e automações",
+      titulo: "Diversas opções de desenvolvimento!",
       descricao:
-        "Experiência na criação de automações, integrando diversas ferramentas como Telegram, Excel, PowerPoint, Word, APIs externas, Email e testes end-to-end automáticos com selenium webdriver",
+        "Experiente no desenvolvimento de diversos tipos de projetos, sempre buscando a maior satisfação do cliente!",
       classe: "integracoes",
       componente: IntegracoesComponent,
     },
@@ -37,14 +39,21 @@ export function CarrosselComponent() {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    draggable: false
+    draggable: false,
   };
 
   return (
-    <Slider {...options}>
-      {projetos.map((projeto, i) => {
-        return <ItemCarrosselComponent key={i} CurrentProject={projeto} />;
-      })}
-    </Slider>
+    <AuthProvider>
+      <Slider {...options}>
+        {projetos.map((projeto) => {
+          return (
+            <ItemCarrosselComponent
+              key={projeto.classe}
+              CurrentProject={projeto}
+            />
+          );
+        })}
+      </Slider>
+    </AuthProvider>
   );
 }

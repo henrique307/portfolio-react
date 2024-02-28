@@ -1,9 +1,50 @@
-.http-component-container {
+.http-component-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-top: 20px;
 }
 
 .http-component-input {
     text-align: center;
-    margin: 10px;
+    margin: 5px;
     padding: 5px 10px;
+}
+
+.http-component-inputs-container {
+    height: 50px;
+    margin-bottom: 30px;
+}
+
+.http-component-info {
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    height: 50px;
+}
+
+.submmit-button {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.response-container {
+    width: 90%;
+    height: 40vh;
+    background-color: rgba(0, 10, 0, 0.3);
+    padding: 15px;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+
+.response-container pre {
+    width: 100%;
+    font-size: 1rem;
+    height: 90%;
+    text-align: left;
+}
+
+.copiar-token {
+    padding: 5px;
 }

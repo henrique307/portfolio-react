@@ -1,9 +1,13 @@
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-import httpComponents from "./components/http.components";
+import {
+  httpComponents,
+  HttpComponentTemplate,
+} from "./components/http.components";
 import "./apis.component.css";
+import { useAuthContext } from "./utils/auth.context";
 
 export function ApisComponent() {
-  // constructor(private readonly apiHandle: ApiHandle) {}
+  const { authToken } = useAuthContext();
 
   return (
     <section className="swagger">
@@ -22,10 +26,13 @@ export function ApisComponent() {
         <a
           className="swagger-text-link"
           target="_blank"
-          href="https://portfolioapi-production.up.railway.app/api/swagger"
+          href="https://docs.google.com/spreadsheets/d/1XaNeCEZYG9A0GJtdCvM2RqTKlbJqjNiAI267TZN-RYU"
         >
           aqui
         </a>
+      </span>
+      <span className={!!authToken ? "autenticado" : "nao-autenticado"}>
+        {authToken ? "Autenticado!" : "Não autenticado"}
       </span>
 
       <Tabs>
@@ -37,12 +44,14 @@ export function ApisComponent() {
           <Tab>Delete</Tab>
         </TabList>
 
-        {httpComponents.map((component) => {
-          return <TabPanel>{component()}</TabPanel>;
-        })}
+          {httpComponents.map((component, key) => {
+            return (
+              <TabPanel key={key}>{HttpComponentTemplate(component)}</TabPanel>
+            );
+          })}
       </Tabs>
 
-      
+      <section></section>
     </section>
   );
 }

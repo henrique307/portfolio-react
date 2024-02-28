@@ -12,7 +12,6 @@ export function ObserverComponent({recievePage}: ObserverComponentProps) {
 
   function observationTrigger() {
     setPageNumber(pageNumber + 1)
-    console.log(pageNumber)
     recievePage(pageNumber)
   }
 

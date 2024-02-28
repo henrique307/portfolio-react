@@ -1,18 +1,33 @@
-import excel from "./assets/excel.svg";
-import powerpoint from "./assets/powerpoint.svg";
-import docs from "./assets/docs.svg";
-import './integracoes.component.css'
+import telegram from "./assets/telegram.svg";
+import trello from "./assets/trello.svg";
+import selenium from "./assets/selenium.svg";
+import "./integracoes.component.css";
 
 export function IntegracoesComponent() {
   return (
     <section className="integracoes-container">
-      <img src={excel} className="icon" alt="" />
-      <img src={docs} className="icon" alt="" />
-      <img src={powerpoint} className="icon" alt="" />
-      <img
-        className="icon"
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg"
-      />
+      <ul className="list">
+        <li className="list-item">
+          <img src={telegram} className="list-item-img" alt="telegram" />
+          <span className="list-item-span">
+            Criação de chatbots no telegram, com pagamento PIX de baixa
+            automática
+          </span>
+        </li>
+        <li className="list-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg" className="list-item-img" />
+          <span className="list-item-span">
+            Testes end-to-end web automatizados com Selenium webdriver
+          </span>
+        </li>
+        <li className="list-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/trello/trello-plain.svg" className="list-item-img" />
+          <span className="list-item-span">
+            Utilização do trello, para atualizações em tempo real do andamento
+            do projeto
+          </span>
+        </li>
+      </ul>
     </section>
   );
 }
