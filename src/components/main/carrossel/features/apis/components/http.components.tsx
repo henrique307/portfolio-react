@@ -18,9 +18,9 @@ export interface HttpComponentProps {
 }
 
 export function HttpComponentTemplate(httpComponentProps: HttpComponentProps) {
-  const [ body, setBody ] = useState({});
+  const [body, setBody] = useState({});
   const { authToken, setAuthToken } = useAuthContext();
-  const [ response, setResponse ]: [
+  const [response, setResponse]: [
     any,
     React.Dispatch<React.SetStateAction<any>>
   ] = useState("");
@@ -30,7 +30,7 @@ export function HttpComponentTemplate(httpComponentProps: HttpComponentProps) {
 
     setResponse("carregando...");
 
-    HttpService({...httpComponentProps, authToken}, body).then((res) => {
+    HttpService({ ...httpComponentProps, authToken }, body).then((res) => {
       setResponse(res);
     });
   }
@@ -59,8 +59,11 @@ export function HttpComponentTemplate(httpComponentProps: HttpComponentProps) {
       <section className="response-container">
         <pre className="response">{httpResponseHandler(response)}</pre>
         <button
-          className="copiar-token"
-          onClick={(event) => {event.preventDefault();setAuthToken(response.token)}}
+          className="use-token"
+          onClick={(event) => {
+            event.preventDefault();
+            setAuthToken(response.token);
+          }}
           disabled={!response.token}
           style={{
             display:
@@ -83,12 +86,12 @@ export const httpComponents: HttpComponentProps[] = [
     inputs: [
       {
         placeholder: "nome",
-        required: true
+        required: true,
       },
       {
         placeholder: "email",
         type: "email",
-        required: true
+        required: true,
       },
     ],
   },

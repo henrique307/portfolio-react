@@ -15,12 +15,14 @@
 }
 
 .autenticado {
-    background-color: green;
+    color: green;
+    font-weight: bold;
     padding: 5px 10px;
 }
 
 .nao-autenticado {
-    background-color: red;
+    color: red;
+    font-weight: bold;
     padding: 5px 10px;
 }
 
@@ -28,6 +30,7 @@
     margin-top: 10px;
     width: 100%;
     display: flex;
+    cursor: pointer;
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.3);
 }

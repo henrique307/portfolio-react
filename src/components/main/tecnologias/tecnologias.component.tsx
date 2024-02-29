@@ -36,56 +36,54 @@ export function MetodologiaComponent() {
     ],
   };
 
+  const techIcons: { name: string; url: string }[] = [
+    {
+      name: "mongodb",
+      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg",
+    },
+    {
+      name: "selenium",
+      url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg",
+    },
+    {
+      name: "react",
+      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg",
+    },
+    {
+      name: "typescript",
+      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg",
+    },
+    {
+      name: "nestjs",
+      url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
+    },
+    {
+      name: "nodejs",
+      url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    },
+    {
+      name: "git",
+      url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+    },
+    {
+      name: "nextjs",
+      url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+    },
+  ];
+
   return (
     <Slider {...options}>
-      <img
-        alt="Mongodb"
-        title="Mongodb"
-        className="tech-icon"
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg"
-      />
-      <img
-        alt="Selenium"
-        title="Selenium"
-        className="tech-icon"
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg"
-      />
-      <img
-        alt="Reactjs"
-        title="ReactJS"
-        className="tech-icon"
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg"
-      />
-      <img
-        alt="Typescript"
-        title="Typescript"
-        className="tech-icon"
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg"
-      />
-      <img
-        alt="NestJS"
-        title="NestJS"
-        className="tech-icon"
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg"
-      />
-      <img
-        alt="NodeJS"
-        title="NodeJS"
-        className="tech-icon"
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-      />
-      <img
-        alt="Git"
-        title="Git"
-        className="tech-icon"
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-      />
-      <img
-        alt="NextJS"
-        title="NextJS"
-        className="tech-icon"
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
-      />
+      {techIcons.map((techIcon, i) => {
+        return (
+          <img
+            key={i}
+            alt={techIcon.name}
+            title={techIcon.name}
+            className="tech-icon"
+            src={techIcon.url}
+          />
+        );
+      })}
     </Slider>
   );
 }

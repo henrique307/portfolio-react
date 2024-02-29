@@ -3,11 +3,17 @@
     margin: 0 auto;
     margin-bottom: 20vh;
     text-align: center;
-    border-radius: 15px;
     box-shadow: 0 0 20px #dce1e1;
-    height: 105vh;
+    height: 100vh;
+    border-radius: 10px;
     background-color: rgba(0, 0, 0, .1);
-    padding: 20px 10px;
+}
+
+div.carrossel_container {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 .carrossel_container::-webkit-scrollbar {

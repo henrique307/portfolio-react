@@ -1,14 +1,23 @@
 import { useState } from "react";
 import { ObserverComponent } from "./observer/observer.component";
-import { getPokemons } from "./pokemons.service";
+import { getRepos } from "./repos.service";
+import { Endpoints } from "@octokit/types";
 import "./web.component.css";
 
-export function PokeListComponent() {
-  const [pokemons, setPokemons] = useState([]);
+export function RepoListComponent() {
+  const [loading, setLoading] = useState(true);
+  const [repos, setRepos] =
+    useState<Endpoints["GET /users/{username}/repos"]["response"]["data"]>();
 
   async function addPageToList(page: number) {
-    let testPokes: never[] = await getPokemons(page) as never[];
-    setPokemons([...pokemons, ...testPokes]);
+    await getRepos(page).then((res) => {
+      if (res.length) {
+        console.log("ola")
+        setRepos([...(repos ?? []), ...res]);
+      } else {
+        setLoading(false);
+      }
+    });
   }
 
   function recievePage(page: number) {
@@ -17,20 +26,20 @@ export function PokeListComponent() {
 
   return (
     <section className="infinite-scrolling-container">
-      <ul className="poke-list">
-        {pokemons.map((pokemon: any, i) => {
+      <ul className="repo-list">
+        {repos?.map((repo, i) => {
           return (
-            <li className="poke-card" key={i}>
-              <span className="pokemon-name">{pokemon.name}</span>
-              <img
-                src={pokemon.sprites["front_default"]}
-                alt={`${pokemon.name}-sprite`}
-              />
+            <li className="repo-card" key={i}>
+              {/* <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${repo.language?.toLowerCase()}/${repo.language?.toLowerCase()}-original.svg`} /> */}
+              <a className="repo-url" target="_blank" href={repo.html_url}>
+                <span className="repo-name">{repo.name}</span>
+              </a>
+              <span className="repo-description">{repo.description}</span>
             </li>
           );
         })}
       </ul>
-      <ObserverComponent recievePage={recievePage}/>
+      <ObserverComponent display={loading} recievePage={recievePage} />
     </section>
   );
 }

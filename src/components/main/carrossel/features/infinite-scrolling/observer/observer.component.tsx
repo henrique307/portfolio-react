@@ -3,10 +3,11 @@ import "./observer.component.css";
 import { useState } from "react";
 
 interface ObserverComponentProps {
+  display: boolean;
   recievePage: (pageNumber: number) => void
 }
 
-export function ObserverComponent({recievePage}: ObserverComponentProps) {
+export function ObserverComponent({recievePage, display}: ObserverComponentProps) {
   const [ref, _] = useInView({ onChange: observationTrigger });
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -15,5 +16,5 @@ export function ObserverComponent({recievePage}: ObserverComponentProps) {
     recievePage(pageNumber)
   }
 
-  return <div ref={ref} className="observer">Carregando...</div>;
+  return <div ref={ref} style={{display: display ? "block" : "none"}} className="observer">Carregando...</div>;
 }

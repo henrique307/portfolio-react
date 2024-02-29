@@ -18,7 +18,7 @@ export function ApisComponent() {
           target="_blank"
           href="https://portfolioapi-production.up.railway.app/api/swagger"
         >
-          neste Link
+          aqui
         </a>
       </span>
       <span className="swagger-text">

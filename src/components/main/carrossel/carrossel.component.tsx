@@ -1,11 +1,10 @@
 import { Projeto } from "./item-carrossel/utils/projeto.interface";
-import { PokeListComponent } from "./features/infinite-scrolling/web.component";
+import { RepoListComponent } from "./features/infinite-scrolling/web.component";
 import { ApisComponent } from "./features/apis/apis.component";
 import { IntegracoesComponent } from "./features/integracoes/integracoes.component";
 import { ItemCarrosselComponent } from "./item-carrossel/item-carrossel.component";
 import Slider from "react-slick";
 import "./carrossel.component.css";
-import React from "react";
 import { AuthProvider } from "./features/apis/utils/auth.context";
 
 export function CarrosselComponent() {
@@ -13,9 +12,9 @@ export function CarrosselComponent() {
     {
       titulo: "Aplicações Web",
       descricao:
-        "Experiente na criação de aplicações web consumindo APIs externas (PokeAPI nesse caso) apresentando os dados de forma concisa e utilizando as melhores práticas de desenvolvimento",
+        "Experiente na criação de aplicações web consumindo APIs externas (GitHub API nesse caso) apresentando os dados de forma concisa e utilizando as melhores práticas de desenvolvimento",
       classe: "infiniteScrolling",
-      componente: PokeListComponent,
+      componente: RepoListComponent,
     },
     {
       titulo: "APIs",

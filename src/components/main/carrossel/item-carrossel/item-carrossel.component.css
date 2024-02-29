@@ -1,13 +1,28 @@
 .projeto-title {
+    margin: 0 auto;
     padding: 10px 0;
+    width: 80%;
+}
+
+.projeto-title-container {
+    background-color: rgba(0, 0, 0, .3);
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .projeto-description {
     font-style: italic;
     max-width: 800px;
-    margin: 0 auto 20px auto;
+    margin: 10px auto 10px auto;
 }
 
 .projeto {
     width: 100%;
+    height: 100vh;
+}
+
+.feature-container {
+    overflow: auto;
+    height: 75vh;
 }

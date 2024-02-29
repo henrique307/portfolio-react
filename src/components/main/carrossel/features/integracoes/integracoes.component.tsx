@@ -1,6 +1,4 @@
 import telegram from "./assets/telegram.svg";
-import trello from "./assets/trello.svg";
-import selenium from "./assets/selenium.svg";
 import "./integracoes.component.css";
 
 export function IntegracoesComponent() {

@@ -19,9 +19,9 @@
 
 .http-component-info {
     text-align: center;
-    margin: 0 auto;
-    width: 80%;
-    height: 50px;
+    margin: 10px auto 0 auto;
+    width: 70%;
+    height: 65px;
 }
 
 .submmit-button {
@@ -30,21 +30,25 @@
 }
 
 .response-container {
+    position: relative;
     width: 90%;
     height: 40vh;
     background-color: rgba(0, 10, 0, 0.3);
     padding: 15px;
     border-radius: 5px;
-    overflow-y: scroll;
 }
 
 .response-container pre {
-    width: 100%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
     font-size: 1rem;
-    height: 90%;
     text-align: left;
+    width: 100%;
 }
 
-.copiar-token {
+.use-token {
+    position: absolute;
+    top: 15px;
+    right: 15px;
     padding: 5px;
 }
