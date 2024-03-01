@@ -12,7 +12,6 @@ export function RepoListComponent() {
   async function addPageToList(page: number) {
     await getRepos(page).then((res) => {
       if (res.length) {
-        console.log("ola");
         setRepos([...(repos ?? []), ...res]);
       } else {
         setLoading(false);
