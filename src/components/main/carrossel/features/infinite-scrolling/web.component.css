@@ -14,6 +14,12 @@
     overflow: auto;
 }
 
+.github-stats {
+    margin: 30px auto;
+    width: 90%;
+    max-width: 500px;
+}
+
 .repo-list {
     margin: 10px;
     display: grid;
@@ -26,7 +32,7 @@
 }
 
 .repo-url {
-    color: black;
+    color: rgba(0, 0, 0, .8);
     text-decoration: none;
 }
 

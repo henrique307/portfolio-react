@@ -4,8 +4,8 @@ import "./tecnologias.component.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export function MetodologiaComponent() {
-  const options = {
+export function TecnologiasComponent() {
+  const sliderOptions = {
     arrows: false,
     className: "tecnologias-container",
     autoplay: true,
@@ -36,7 +36,7 @@ export function MetodologiaComponent() {
     ],
   };
 
-  const techIcons: { name: string; url: string }[] = [
+  const iconLinks: { name: string; url: string }[] = [
     {
       name: "mongodb",
       url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg",
@@ -72,18 +72,23 @@ export function MetodologiaComponent() {
   ];
 
   return (
-    <Slider {...options}>
-      {techIcons.map((techIcon, i) => {
-        return (
-          <img
-            key={i}
-            alt={techIcon.name}
-            title={techIcon.name}
-            className="tech-icon"
-            src={techIcon.url}
-          />
-        );
-      })}
-    </Slider>
+    <section className="techs">
+      <h1 className="techs-description">
+        Minhas Skills
+      </h1>
+      <Slider {...sliderOptions}>
+        {iconLinks.map((icon, i) => {
+          return (
+            <img
+              key={i}
+              alt={icon.name}
+              title={icon.name}
+              className="tech-icon"
+              src={icon.url}
+            />
+          );
+        })}
+      </Slider>
+    </section>
   );
 }

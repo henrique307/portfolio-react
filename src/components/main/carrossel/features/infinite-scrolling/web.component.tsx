@@ -12,7 +12,7 @@ export function RepoListComponent() {
   async function addPageToList(page: number) {
     await getRepos(page).then((res) => {
       if (res.length) {
-        console.log("ola")
+        console.log("ola");
         setRepos([...(repos ?? []), ...res]);
       } else {
         setLoading(false);
@@ -26,6 +26,10 @@ export function RepoListComponent() {
 
   return (
     <section className="infinite-scrolling-container">
+      <img
+        className="github-stats"
+        src="https://github-readme-stats.vercel.app/api?username=henrique307&show_icons=true&layout=compact&custom_title=%20Github%20Stats&theme=graywhite&include_all_commits=true&hide=contribs"
+      />
       <ul className="repo-list">
         {repos?.map((repo, i) => {
           return (

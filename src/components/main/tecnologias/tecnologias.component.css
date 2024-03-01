@@ -12,3 +12,14 @@
 .tech-icon {
     max-width: 70px;
 }
+
+.techs {
+    width: 100%;
+}
+
+.techs-description {
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.8);
+}

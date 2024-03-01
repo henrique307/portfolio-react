@@ -36,3 +36,10 @@
     height: 200px;
     background-color: rgba(0, 0, 0, .1);
 }
+
+
+@media (max-width: 500px) {
+    .list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

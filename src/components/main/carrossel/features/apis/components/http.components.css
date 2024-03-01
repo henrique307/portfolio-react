@@ -32,7 +32,7 @@
 .response-container {
     position: relative;
     width: 90%;
-    height: 40vh;
+    height: 50vh;
     background-color: rgba(0, 10, 0, 0.3);
     padding: 15px;
     border-radius: 5px;
@@ -51,4 +51,12 @@
     top: 15px;
     right: 15px;
     padding: 5px;
+}
+
+
+@media (max-width: 480px) {
+    .http-component-inputs-container {
+        height: 150px;
+        margin-bottom: 30px;
+    }
 }
