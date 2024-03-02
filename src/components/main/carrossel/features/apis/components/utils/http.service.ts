@@ -13,8 +13,6 @@ export async function HttpService(req: HttpComponentProps, body: any) {
                     "Accept": "*/*"
                 },
                 body: JSON.stringify(body)
-            }).then(res => {
-                return res.json()
             })
         } catch (e: any) {
             return { message: `Opa! Não foi possivel atenticar-se ${e.message}` }
@@ -28,10 +26,10 @@ export async function HttpService(req: HttpComponentProps, body: any) {
                 method: req.method,
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer ${req.authToken ?? ""}`
+                    "Authorization": `Bearer ${/*req.authToken ??*/ "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21lIjoibm9tZSIsImVtYWlsIjoibm9tZUBub21lLmNvbSIsImlhdCI6MTcwOTM4ODU2MCwiZXhwIjoxNzA5NDc0OTYwfQ.u0s3WCxArvSnx-f90QUPFkkM1fmVC_7mmV0xtt-t1Zc"}`
                 },
                 body: reqBody
-            }).then(res => res.json())
+            })
         } catch (e: any) {
             return { message: `Opa! Não foi possivel atenticar-se ${e.message}` }
         }

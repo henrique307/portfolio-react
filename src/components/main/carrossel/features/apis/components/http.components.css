@@ -13,15 +13,16 @@
 }
 
 .http-component-inputs-container {
-    height: 50px;
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
 .http-component-info {
     text-align: center;
     margin: 10px auto 0 auto;
-    width: 70%;
-    height: 65px;
+    width: 80%;
+    height: 70px;
 }
 
 .submmit-button {
@@ -36,7 +37,7 @@
     background-color: rgba(0, 10, 0, 0.3);
     padding: 15px;
     border-radius: 5px;
-    overflow-y: scroll 
+    overflow-y: scroll;
 }
 
 .response-container pre {
@@ -52,12 +53,4 @@
     top: 15px;
     right: 15px;
     padding: 5px;
-}
-
-
-@media (max-width: 480px) {
-    .http-component-inputs-container {
-        height: 150px;
-        margin-bottom: 30px;
-    }
 }

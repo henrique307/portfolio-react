@@ -1,21 +1,8 @@
-import { useState } from "react";
-import "./http.components.css";
+import { FormEvent, useState } from "react";
 import { HttpService } from "./utils/http.service";
 import { useAuthContext } from "../utils/auth.context";
 import { httpResponseHandler } from "./utils/httpResponse.handler";
-
-export interface HttpComponentProps {
-  method: "GET" | "POST" | "PATCH" | "DELETE";
-  name: string;
-  info: string;
-  inputs: {
-    placeholder: string;
-    required?: boolean;
-    type?: string;
-  }[];
-  auth?: boolean;
-  authToken?: string;
-}
+import "./http.components.css";
 
 export function HttpComponentTemplate(httpComponentProps: HttpComponentProps) {
   const [body, setBody] = useState({});
@@ -25,18 +12,37 @@ export function HttpComponentTemplate(httpComponentProps: HttpComponentProps) {
     React.Dispatch<React.SetStateAction<any>>
   ] = useState("");
 
-  async function enviaValores(mouseEvent: React.MouseEvent) {
-    mouseEvent.preventDefault();
+  async function enviaValores(
+    formEvent: FormEvent<HTMLFormElement>,
+    componentProps: HttpComponentProps
+  ) {
+    formEvent.preventDefault();
 
     setResponse("carregando...");
 
-    HttpService({ ...httpComponentProps, authToken }, body).then((res) => {
-      setResponse(res);
-    });
+    console.log(body);
+
+    HttpService({ ...httpComponentProps, authToken }, body)
+      .then((res) => {
+        if (!(res instanceof Response)) return res;
+
+        if (res.ok) {
+          setBody({});
+          const inputs: HTMLInputElement[] = Array.from(document.querySelectorAll(`.${componentProps.name}-input`))
+
+          inputs.forEach(input => input.value = "")
+        }
+
+        return res.json();
+      })
+      .then((json) => setResponse(json));
   }
 
   return (
-    <form className="http-component-form">
+    <form
+      className="http-component-form"
+      onSubmitCapture={(e) => enviaValores(e, httpComponentProps)}
+    >
       <span className="http-component-info">{httpComponentProps.info}</span>
       <section className="http-component-inputs-container">
         {httpComponentProps.inputs.map((input) => {
@@ -47,15 +53,13 @@ export function HttpComponentTemplate(httpComponentProps: HttpComponentProps) {
               onChange={(event) => {
                 setBody({ ...body, [input.placeholder]: event.target.value });
               }}
-              className={`http-component-input ${input.type ?? "text"}`}
+              className={`http-component-input ${input.type ?? "text"} ${httpComponentProps.name}-input`}
               type={input.type ?? "text"}
             />
           );
         })}
       </section>
-      <button className="submmit-button" onClick={enviaValores}>
-        Enviar valores!
-      </button>
+      <button className="submmit-button">Enviar valores!</button>
       <section className="response-container">
         <pre className="response">{httpResponseHandler(response)}</pre>
         <button
@@ -122,7 +126,6 @@ export const httpComponents: HttpComponentProps[] = [
       },
       {
         placeholder: "recado",
-        required: true,
       },
     ],
   },
@@ -156,7 +159,22 @@ export const httpComponents: HttpComponentProps[] = [
       {
         placeholder: "id",
         type: "number",
+        required: true,
       },
     ],
   },
 ];
+
+export interface HttpComponentProps {
+  method: "GET" | "POST" | "PATCH" | "DELETE";
+  name: string;
+  info: string;
+  // bodyType: any
+  inputs: {
+    placeholder: string;
+    required?: boolean;
+    type?: string;
+  }[];
+  auth?: boolean;
+  authToken?: string;
+}
