@@ -1,0 +1,24 @@
+.project-title {
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 80%;
+    color: rgba(0, 0, 0, .6);
+}
+
+.project-description {
+    text-align: center;
+    font-style: italic;
+    max-width: 800px;
+    margin: 10px auto 30px auto;
+    width: 80%;
+}
+
+.project {
+    width: 90%;
+    margin: 50px auto;
+}
+
+.features .project {
+    margin-bottom: 20vh;
+}

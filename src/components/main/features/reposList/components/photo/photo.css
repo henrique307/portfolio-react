@@ -1,0 +1,45 @@
+.photo-card {
+    position: relative;
+}
+
+.photo-card:hover .photo-card-overlay {
+    opacity: .6;
+}
+
+.photo-card-overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: .3s ease-in-out;
+    height: 100%;
+    width: 100%;
+}
+
+.photographer-page-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.link-camera {
+    margin: 0 auto 10px auto;
+}
+
+span.photo-by {
+    word-wrap: break-word;
+    margin-bottom: 30px;
+    width: 90%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+}

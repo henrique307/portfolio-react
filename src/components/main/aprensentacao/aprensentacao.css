@@ -1,0 +1,35 @@
+.apresentacao_perfil {
+    background-image: url("./assets/fotao.jpg");
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-position: -10px -30px;
+    margin: 20px auto 0 auto;
+    height: 150px;
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 75px;
+}
+
+.apresentacao_resumo {
+    margin-top: 20px;
+    text-align: justify;
+    font-style: italic;
+}
+
+.apresentacao {
+    width: 80%;
+    margin: 300px auto;
+    max-width: 700px;
+}
+
+.icon-container a img {
+    width: 50px;
+}
+
+.icon-container {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

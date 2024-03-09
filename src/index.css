@@ -1,11 +1,3 @@
-/* black 000814 yellow ffc300 white fff8e0 */
-
-:root {
-  --black: #000814;
-  --yellow: #FFC300;
-  --white: #FFF8E0
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
@@ -28,4 +22,8 @@ code {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+p {
+  font-size: 1.3rem;
 }

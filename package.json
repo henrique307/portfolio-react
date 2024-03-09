@@ -4,28 +4,29 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/react": "^18.2.58",
-    "@types/react-dom": "^18.2.19",
+    "@craco/craco": "^7.1.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.12",
+    "@mui/material": "^5.15.12",
+    "blurhash": "^2.0.5",
+    "canvas": "^2.11.2",
     "octokit": "^3.1.2",
     "react": "^18.2.0",
+    "react-blurhash": "^0.3.0",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.8.1",
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.2",
     "react-tabs": "^6.0.2",
     "slick-carousel": "^1.8.1",
-    "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -49,8 +50,15 @@
   },
   "devDependencies": {
     "@octokit/types": "^12.6.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
     "@types/node": "^20.11.24",
+    "@types/react": "^18.2.58",
+    "@types/react-dom": "^18.2.19",
     "@types/react-slick": "^0.23.13",
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "typescript": "^4.9.5"
   }
 }

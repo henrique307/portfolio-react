@@ -1,0 +1,67 @@
+.swagger-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.swagger-text-link {
+    text-decoration: none;
+}
+
+.swagger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.autenticado {
+    color: green;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.nao-autenticado {
+    color: red;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.auth-warning {
+    margin-bottom: 20px;
+}
+
+.react-tabs {
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.react-tabs__tab-list {
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.react-tabs__tab--selected {
+    border-bottom: black solid 2px;
+}
+
+.react-tabs__tab--selected:focus {
+    outline: none;
+}
+
+.react-tabs__tab {
+    background-color: rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px 20px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: color 0.3s;
+    list-style: none;
+    width: 100%;
+}
+
+.react-tabs__tab:last-child {
+    border-right: none;
+}

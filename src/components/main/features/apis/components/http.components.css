@@ -1,0 +1,50 @@
+.http-component-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.http-component-inputs-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.http-component-info {
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.http-component-form button {
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+.response-container {
+    position: relative;
+    width: 90%;
+    height: 50vh;
+    background-color: rgba(0, 10, 0, 0.2);
+    padding: 15px;
+    border-radius: 5px;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+}
+
+.response-container pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 1rem;
+    text-align: left;
+    width: 100%;
+}
+
+.response-container button {
+    position: absolute;
+    right: 15px;
+    display: block;
+}

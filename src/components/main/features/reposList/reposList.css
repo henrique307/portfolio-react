@@ -1,0 +1,62 @@
+.infinite-scrolling-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    height: 50vh;
+    scrollbar-width: none;
+}
+
+.infinite-scrolling-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+.infinite-scrolling-container::-webkit-scrollbar:hover {
+    display: none;
+}
+
+.images-list {
+    /* Prevent vertical gaps */
+    line-height: 0;
+    -webkit-column-count: 5;
+    -webkit-column-gap: 5px;
+    -moz-column-count: 5;
+    -moz-column-gap: 5px;
+    column-count: 5;
+    column-gap: 5px;
+}
+
+.images-list img {
+    /* Just in case there are inline attributes */
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 5px;
+}
+
+/* Estilos específicos para telas maiores que 900px */
+@media (max-width: 900px) {
+    .images-list {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+}
+
+/* Estilos específicos para telas maiores que 630px */
+@media (max-width: 630px) {
+    .images-list {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+
+/* Estilos específicos para telas maiores que 410px */
+@media (max-width: 410px) {
+    .images-list {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}

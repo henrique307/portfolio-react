@@ -1,0 +1,48 @@
+.parallax_wrapper {
+    height: 100vh;
+    overflow: hidden;
+    /* overflow-y: auto;
+    overflow-x: hidden; */
+}
+
+.title-container {
+    background-image: url("https://pbs.twimg.com/media/B2XTRwtCAAEnqlP.jpg:large");
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.titulo {
+    width: 50%;
+    max-width: 500px;
+    text-align: center;
+    padding: 25px;
+    border: 8px solid white;
+    font-family: 'Franklin Gothic Heavy', sans-serif;
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 2px 2px 5px
+                             rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 565px) {
+    .titulo {
+        border: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+#group-1 {
+    z-index: -1;
+}
