@@ -8,7 +8,7 @@ export function FooterComponent() {
           <div className="footer-container">
             <div className="footer-description">
               <h5 className="white-text">Obrigado pela visita!</h5>
-              <p className="grey-text text-lighten-4">Caso deseje entrar em contato, aqui estão algumas formas!</p>
+              <p className="grey-text text-lighten-4">Caso deseje entrar em contato, aqui estão algumas formas:</p>
             </div>
             <section className="links-container">
               <div className="links">
